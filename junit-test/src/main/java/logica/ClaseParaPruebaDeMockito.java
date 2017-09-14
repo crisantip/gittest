@@ -6,11 +6,11 @@ public class ClaseParaPruebaDeMockito {
 
 	private static final String CADENA_ESPACIO = " ";
 
-	public String validaEdad(final PruebaVo pruebaVo) {
+	public String validaEdad(PruebaVo pruebaVo) {
 		String returnValue = "";
 
 		if (pruebaVo.getNombre() != null && pruebaVo.getApellidoPaterno() != null) {
-			final boolean flag = validaEdad(pruebaVo.getEdad());
+			boolean flag = validaEdad(pruebaVo.getEdad());
 			if (flag) {
 				returnValue = imprimirDatos(pruebaVo);
 			}
@@ -18,8 +18,8 @@ public class ClaseParaPruebaDeMockito {
 		return returnValue;
 	}
 
-	private String imprimirDatos(final PruebaVo pruebaVo) {
-		final StringBuilder builder = new StringBuilder();
+	private String imprimirDatos(PruebaVo pruebaVo) {
+		StringBuilder builder = new StringBuilder();
 		builder.append(pruebaVo.getNombre());
 		builder.append(CADENA_ESPACIO);
 		builder.append(pruebaVo.getApellidoPaterno());
@@ -35,7 +35,7 @@ public class ClaseParaPruebaDeMockito {
 		return builder.toString();
 	}
 
-	private boolean validaEdad(final Integer edad) {
+	private boolean validaEdad(Integer edad) {
 
 		if (edad >= 18) {
 			return true;
